@@ -1,0 +1,79 @@
+Source: python-evdev
+Maintainer: Stephen Kitt <skitt@debian.org>
+Section: python
+Priority: optional
+Build-Depends: debhelper (>= 11~),
+               dh-python (>= 3.20180313~),
+               python-setuptools,
+               python3-setuptools,
+               python3-docutils,
+               python-all-dev,
+               python3-all-dev,
+               python-pytest,
+               python3-pytest,
+               python3-sphinx,
+               python3-sphinx-rtd-theme
+Build-Conflicts: python-sphinx
+Standards-Version: 4.2.1
+Vcs-Browser: https://salsa.debian.org/debian/python-evdev
+Vcs-Git: https://salsa.debian.org/debian/python-evdev.git
+Homepage: https://github.com/gvalkov/python-evdev
+Testsuite: autopkgtest-pkg-python
+Rules-Requires-Root: no
+
+Package: python-evdev
+Architecture: linux-any
+Depends: ${python:Depends},
+         ${misc:Depends},
+         ${shlibs:Depends}
+Suggests: python-evdev-doc
+Description: Python bindings for the Linux input subsystem
+ This package provides bindings to the generic input event interface
+ in Linux. The evdev interface serves the purpose of passing events
+ generated in the kernel directly to userspace through character
+ devices that are typically located in /dev/input/.
+ .
+ This package also comes with bindings to uinput, the userspace input
+ subsystem. Uinput allows userspace programs to create and handle
+ input devices that can inject events directly into the input
+ subsystem.
+ .
+ This package installs the library for Python 2.
+
+Package: python3-evdev
+Architecture: linux-any
+Depends: ${python3:Depends},
+         ${misc:Depends},
+         ${shlibs:Depends}
+Suggests: python-evdev-doc
+Description: Python 3 bindings for the Linux input subsystem
+ This package provides bindings to the generic input event interface
+ in Linux. The evdev interface serves the purpose of passing events
+ generated in the kernel directly to userspace through character
+ devices that are typically located in /dev/input/.
+ .
+ This package also comes with bindings to uinput, the userspace input
+ subsystem. Uinput allows userspace programs to create and handle
+ input devices that can inject events directly into the input
+ subsystem.
+ .
+ This package installs the library for Python 3.
+
+Package: python-evdev-doc
+Architecture: linux-any
+Section: doc
+Depends: ${sphinxdoc:Depends},
+         ${misc:Depends}
+Built-Using: ${sphinxdoc:Built-Using}
+Description: Python bindings for the Linux input subsystem (docs)
+ This package provides bindings to the generic input event interface
+ in Linux. The evdev interface serves the purpose of passing events
+ generated in the kernel directly to userspace through character
+ devices that are typically located in /dev/input/.
+ .
+ This package also comes with bindings to uinput, the userspace input
+ subsystem. Uinput allows userspace programs to create and handle
+ input devices that can inject events directly into the input
+ subsystem.
+ .
+ This is the documentation package.
